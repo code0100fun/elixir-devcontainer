@@ -1,11 +1,16 @@
 {
-  "image": "hexpm/elixir:1.16.2-erlang-25.3.2.11-ubuntu-focal-20240216",
-  "name": "elixir-devcontainer",
-  "onCreateCommand": "elixir --version",
+  "name": "Devbox Remote Container",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "context": ".."
+  },
   "customizations": {
     "vscode": {
-      "extensions": ["jakebecker.elixir-ls", "eamodio.gitlens"]
+      "settings": {},
+      "extensions": [
+        "jetpack-io.devbox"
+      ]
     }
   },
-  "forwardPorts": [4000]
+  "remoteUser": "devbox"
 }
